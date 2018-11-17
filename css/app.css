@@ -1,0 +1,248 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff url('../img/geometry2.png');
+  /* Background pattern from Subtle Patterns */
+  font-family: 'Bungee Inline', cursive;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Bungee Inline', cursive;
+  font-weight: 300;
+}
+
+h3 {
+  font-family: 'Bungee Inline', cursive;
+  font-weight: bold;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+.deck {
+  width: 660px;
+  min-height: 680px;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em;
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-iteration-count: 1.5;
+}
+
+.deck .card {
+  height: 125px;
+  width: 125px;
+  background: #2e3d49;
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+  transform: rotateY(0);
+  background: #02b3e4;
+  cursor: default;
+}
+
+.deck .card.show {
+  font-size: 33px;
+}
+
+.deck .card.match {
+  cursor: default;
+  background: #02ccba;
+  font-size: 33px;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+.score-panel {
+  text-align: left;
+  width: 345px;
+  margin-bottom: 10px;
+}
+
+.score-panel .stars {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+}
+
+.score-panel .restart {
+  float: right;
+  cursor: pointer;
+}
+
+/*
+ * Styles of the Modal
+ */
+.modal__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.00);
+  -webkit-animation-duration: 1.5s;
+}
+
+.hide {
+  display: none;
+}
+
+.modal__body {
+  position: relative;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  background: linear-gradient(200deg, #B41C32 39.29%, #1D663C 60.71%);
+  transform: translate(-50%, -70%);
+  border-radius: 30px;
+}
+
+.modal__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid green;
+}
+
+.modal__close {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.modal__stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid green;
+}
+
+.modal__buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.modal__button {
+  width: 60px;
+  height: 30px;
+}
+
+.keyboard-shorcut-menu {
+  width: 300px;
+  padding: 40px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 0 3em;
+  background: linear-gradient(#3B50C8, #0964AA);
+  border: 20px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  -webkit-animation-duration: 0.7s;
+  -webkit-animation-iteration-count: 1;
+}
+
+.keyboard-menu {
+  padding: 5px;
+  align-items: center;
+  font-family: 'Chakra Petch', sans-serif;
+  list-style: circle;
+  line-height: 200%;
+}
+
+@media only screen and (max-width: 650px) {
+  .keyboard-shorcut-menu .keyboard-menu {
+    width: 70%;
+    height: 30%;
+    min-height: 20%;
+    margin: 10%;
+    padding: 0;
+  }
+  
+  .deck {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .deck .card {
+    height: 110px;
+    width: 110px;
+    margin: 5px;
+  }
+
+  .deck .card {
+    line-height: 110px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .keyboard-shorcut-menu {
+    width: 70%;
+    height: 30%;
+    min-height: 20%;
+    margin: 10%;
+    padding: 0;
+  }
+
+  .score-panel {
+    width: 100%;
+  }
+
+  .deck .card {
+    height: 70px;
+    width: 70px;
+  }
+
+  .deck .card {
+    line-height: 70px;
+  }
+}
