@@ -268,3 +268,36 @@ function resetStars() {
     star.style.display = 'inline';
   }
 }
+
+/*
+ * extra fun functionalities
+ */
+
+//alert box in case the user has taken too much to finish the game
+setTimeout(function() {
+  alert("it looks like you are taking ages...");
+}, 580000);
+
+
+//mixCards keyboard shortcut "S"
+document.addEventListener('keydown', function(event) {
+  if (event.code == 'KeyS') {
+    mixCards();
+  }
+});
+
+
+//reset game keyboard shortcut "E"
+document.addEventListener('keydown', function(event) {
+  if (event.code == 'KeyE') {
+    winModal();
+    resultsModal();
+  }
+});
+
+//send user to another website  keyboard shortcut "w"
+document.addEventListener('keydown', function(event) {
+  if (event.code == 'KeyW') {
+    window.location.href = 'http://en.bcdn.biz/Images/2018/6/12/49c138bc-9393-4dfe-919e-beeb1aaa01ae.jpg'
+  }
+});

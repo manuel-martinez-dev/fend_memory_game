@@ -6,7 +6,7 @@ Memory game - part of the FEND by Udacity
 A simple matching card game, where all you need to do is click on a card
 and match it with its double.
 
-# Tecnical info
+# Technical info
 The actions of game were created using Javascript.
 small animations are part of the html
 
